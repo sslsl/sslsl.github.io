@@ -1,0 +1,372 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C++ Interview Questions | Seraphina</title><meta name="keywords" content="C++,Interview"><meta name="author" content="Haoyu Wu"><meta name="copyright" content="Haoyu Wu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="I used to be interviewed with Java and Python. Currently, I’m preparing an interview with C++. Here are some top C++ questions that are frequently asked in a real interview.  Question: Define C++?Answ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Interview Questions">
+<meta property="og:url" content="http://sslsl.github.io/2021/02/22/C-Interview-Questions/index.html">
+<meta property="og:site_name" content="Seraphina">
+<meta property="og:description" content="I used to be interviewed with Java and Python. Currently, I’m preparing an interview with C++. Here are some top C++ questions that are frequently asked in a real interview.  Question: Define C++?Answ">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://sslsl.github.io/img/bg/bg4.jpg">
+<meta property="article:published_time" content="2021-02-22T17:42:33.000Z">
+<meta property="article:modified_time" content="2021-02-22T18:08:50.431Z">
+<meta property="article:author" content="Haoyu Wu">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="Interview">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://sslsl.github.io/img/bg/bg4.jpg">
+<meta property="fb:app_id" content="242214970684617"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://sslsl.github.io/2021/02/22/C-Interview-Questions/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-02-22 10:08:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/photo.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/photo/"><i class="fa-fw fas fa-camera"></i><span> Photo</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bg/bg4.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Seraphina</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/photo/"><i class="fa-fw fas fa-camera"></i><span> Photo</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C++ Interview Questions</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-02-22T17:42:33.000Z" title="Created 2021-02-22 09:42:33">2021-02-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-02-22T18:08:50.431Z" title="Updated 2021-02-22 10:08:50">2021-02-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Tech/">Tech</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>I used to be interviewed with Java and Python. Currently, I’m preparing an interview with C++. Here are some top C++ questions that are frequently asked in a real interview. </p>
+<h3 id="Question-Define-C"><a href="#Question-Define-C" class="headerlink" title="Question: Define C++?"></a>Question: Define C++?</h3><p>Answer: C++ is a computer programming language that is a superset of C wherein additional features are made in the C language. </p>
+<h3 id="Question-Can-we-call-C-OOPS-and-Why"><a href="#Question-Can-we-call-C-OOPS-and-Why" class="headerlink" title="Question: Can we call C++ OOPS? and Why?"></a>Question: Can we call C++ OOPS? and Why?</h3><p>Answer: Yes, C++ can be called OOPS. The full form of OOPS is an Object-Oriented Programming System, which means a paradigm that provides an application of various concepts, including data binding, polymorphism, inheritance, and various others. </p>
+<p><strong><em>OOP features:  Encapsulation, inheritance and polymorphism.</em></strong></p>
+<h3 id="Question-Define-Class-in-C"><a href="#Question-Define-Class-in-C" class="headerlink" title="Question: Define Class in C++?"></a>Question: Define Class in C++?</h3><p>Answer: Class is referred to as the designing of the user-defined data type. It reflects the different entities, attributes, and actions.</p>
+<h3 id="Question-Define-Object-in-C"><a href="#Question-Define-Object-in-C" class="headerlink" title="Question: Define Object in C++?"></a>Question: Define Object in C++?</h3><p>Answer: Object is an instance of the class. An object can have fields, methods, constructors, and related. </p>
+<h3 id="Question-Define-Encapsulation-in-C"><a href="#Question-Define-Encapsulation-in-C" class="headerlink" title="Question: Define Encapsulation in C++?"></a>Question: Define Encapsulation in C++?</h3><p>Answer: Encapsulation is the process of binding together the data and functions in a class. It is applied to prevent direct access to the data for security reasons. The functions of a class are applied for this purpose.</p>
+<h3 id="Question-Briefly-explain-the-concept-of-Inheritance-in-C"><a href="#Question-Briefly-explain-the-concept-of-Inheritance-in-C" class="headerlink" title="Question: Briefly explain the concept of Inheritance in C++."></a>Question: Briefly explain the concept of Inheritance in C++.</h3><p>Answer: C++ allows classes to inherit some of the commonly used state and behavior from other classes.</p>
+<h3 id="Question-What-is-an-abstraction-in-C"><a href="#Question-What-is-an-abstraction-in-C" class="headerlink" title="Question: What is an abstraction in C++?"></a>Question: What is an abstraction in C++?</h3><p>Answer: An abstraction in C++ is hiding the internal implementations and displaying only the required details. </p>
+<h3 id="Question-Define-access-specifier-and-its-various-types-in-C"><a href="#Question-Define-access-specifier-and-its-various-types-in-C" class="headerlink" title="Question: Define access specifier and its various types in C++"></a>Question: Define access specifier and its various types in C++</h3><p>Answer: An access specifier offers how it is possible to define how the class members, i.e., functions and variables, will be accessed outside the class’s scope. There are three types of access specifier in C++:<br>•    Private – Such class members can’t be accessed outside the class in which they are declared and are only accessible within the same class. Even child classes are disabled to access private members of its parent class.<br>•    Protected – In addition to the class in which they are declared, the child classes can access its parent class’s protected members.<br>•    Public – Class members declared as public can be accessed throughout the program (code)</p>
+<h3 id="Question-Define-a-namespace"><a href="#Question-Define-a-namespace" class="headerlink" title="Question: Define a namespace?"></a>Question: Define a namespace?</h3><p>Answer:  A namespace is used for resolving the name conflict of the identifier, which is accomplished by placing them under various namespaces. This way, it helps in the logical division of the different codes.</p>
+<h3 id="Question-Define-a-class-template"><a href="#Question-Define-a-class-template" class="headerlink" title="Question: Define a class template?"></a>Question: Define a class template?</h3><p>Answer: A class template is a name given to the generic class. The use of the keyword template is made for defining a class template.</p>
+<h3 id="Question-What-is-the-function-of-the-keyword-“Volatile”"><a href="#Question-What-is-the-function-of-the-keyword-“Volatile”" class="headerlink" title="Question: What is the function of the keyword “Volatile”?"></a>Question: What is the function of the keyword “Volatile”?</h3><p>Answer: “Volatile” is a function that helps in declaring that the particular variable is volatile and thereby directs the compiler to change the variable externally- this way, the compiler optimization on the variable reference can be avoided.</p>
+<h3 id="Question-Define-storage-class-in-C-Name-some"><a href="#Question-Define-storage-class-in-C-Name-some" class="headerlink" title="Question: Define storage class in C++? Name some?"></a>Question: Define storage class in C++? Name some?</h3><p>Answer: Storage class in C++ specifically resemble life or even the scope of symbols, including the variables, functions, etc. Some of the storage class names in C++ include mutable, auto, static, extern, register, etc.</p>
+<h3 id="Question-What-are-the-most-important-differences-between-C-and-C"><a href="#Question-What-are-the-most-important-differences-between-C-and-C" class="headerlink" title="Question: What are the most important differences between C and C++?"></a>Question: What are the most important differences between C and C++?</h3><p>Answer:<br>•    C++ supports references while C doesn’t<br>•    Features like friend functions, function overloading, inheritance, templates, and virtual functions are inherent to C++. These are not available in the C programming language.<br>•    In C, exception handling is taken care of in the traditional if-else style. On the other hand, C++ offers support for exception handling at the language level.<br>•    Mainly used input and output in C are scanf() and printf(), respectively. In C++, cin is the standard input stream while cout serves as the standard output stream.<br>•    While C is a procedural programming language, C++ provides support for both procedural and object-oriented programming approaches.</p>
+<h3 id="Question-Why-do-we-need-the-Friend-class-and-function"><a href="#Question-Why-do-we-need-the-Friend-class-and-function" class="headerlink" title="Question: Why do we need the Friend class and function?"></a>Question: Why do we need the Friend class and function?</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">using namespace std;</span><br><span class="line">class CCar;</span><br><span class="line">class CDriver&#123;</span><br><span class="line">    public:</span><br><span class="line">    void ModifyCar(CCar* pCar);</span><br><span class="line">&#125;;</span><br><span class="line">class CCar&#123;</span><br><span class="line">    private:</span><br><span class="line">    int price;</span><br><span class="line">    &#x2F;&#x2F;declare friend</span><br><span class="line">    friend int MostExpensiveCar(CCar cars[], int total); </span><br><span class="line">    friend vold CDriver::ModifyCar(CCar* pCar);</span><br><span class="line">&#125;</span><br><span class="line">void CDriver::ModifyCar(CCar* pCar)&#123;</span><br><span class="line">    pCar-&gt;price +&#x3D; 1000;</span><br><span class="line">&#125;</span><br><span class="line">int MostExpensiveCar(CCar cars[], int total)&#123;</span><br><span class="line">    int max &#x3D; -1;</span><br><span class="line">    for(int i &#x3D; 0 ;i&lt; total ; ++i)&#123;</span><br><span class="line">        if(cars[i].price&gt;max)&#123;</span><br><span class="line">            max &#x3D; cars[i].price;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main() &#123;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Answer: Sometimes, there is a need for allowing a particular class to access private or protected members of a class. The solution is a friend class, which can access the protected and private members of the class in which it is declared as a friend.<br>Similar to the friend class, a friend function is able to access private and protected class members. A friend function can either be a global function or a method of some class.<br>Some important points about friend class and friend function:<br>•    Friendship is not inherited.<br>•    Friendship isn’t mutual, i.e., if some class called Friend is a friend of some other class called NotAFriend, then it doesn’t automatically become a friend of the Friend class.<br>•    The total number of friend classes and friend functions should be limited in a program as the overabundance of the same might lead to a depreciation of the concept of encapsulation of separate classes, which is an inherent and desirable quality of object-oriented programming.</p>
+<h3 id="Question-Explain-the-significance-of-vTable-and-vptr-in-C-and-how-the-compiler-deals-with-them"><a href="#Question-Explain-the-significance-of-vTable-and-vptr-in-C-and-how-the-compiler-deals-with-them" class="headerlink" title="Question: Explain the significance of vTable and vptr in C++ and how the compiler deals with them"></a>Question: Explain the significance of vTable and vptr in C++ and how the compiler deals with them</h3><p>Answer: vTable is a table containing function pointers. Every class has a vTable. vptr is a pointer to vTable. Each object has a vptr. In order to maintain and use vptr and vTable, the C++ compiler adds additional code at two places:</p>
+<ol>
+<li>   In every constructor – This code sets vptr:</li>
+<li>   Of the object being created</li>
+<li>   To point to vTable of the class</li>
+<li>   Code with the polymorphic functional call – At every location where a polymorphic call is made, the compiler inserts code in order to first look for vptr using the base class pointer or reference. The vTable of a derived class can be accessed once the vptr is successfully fetched. Address of derived class function show() is accessed and called using the vTable.</li>
+</ol>
+<h3 id="Question-How-is-function-overloading-different-from-operator-overloading"><a href="#Question-How-is-function-overloading-different-from-operator-overloading" class="headerlink" title="Question: How is function overloading different from operator overloading?"></a>Question: How is function overloading different from operator overloading?</h3><p>Answer: Function overloading allows two or more functions with different type and number of parameters to have the same name. On the other hand, operator overloading allows for redefining the way an operator works for user-defined types.</p>
+<h3 id="Question-Is-it-possible-for-a-C-program-to-be-compiled-without-the-main-function"><a href="#Question-Is-it-possible-for-a-C-program-to-be-compiled-without-the-main-function" class="headerlink" title="Question: Is it possible for a C++ program to be compiled without the main() function?"></a>Question: Is it possible for a C++ program to be compiled without the main() function?</h3><p>Answer: Yes, it is possible. However, as the main() function is essential for the execution of the program, the program will stop after compiling and will not execute.</p>
+<h3 id="Question-What-is-a-destructor"><a href="#Question-What-is-a-destructor" class="headerlink" title="Question: What is a destructor?"></a>Question: What is a destructor?</h3><p>Answer: A destructor is the member function of the class. It has the same name as the class name and also prefixed with a tilde symbol. It can be executed automatically whenever an object loses its scope.</p>
+<h3 id="Question-Can-we-overload-a-destructor"><a href="#Question-Can-we-overload-a-destructor" class="headerlink" title="Question: Can we overload a destructor?"></a>Question: Can we overload a destructor?</h3><p>Answer: No, a destructor cannot be overloaded, and it has the only form without the parameters.</p>
+<h3 id="Question-What-is-the-default-constructor"><a href="#Question-What-is-the-default-constructor" class="headerlink" title="Question: What is the default constructor?"></a>Question: What is the default constructor?</h3><p>Answer: The compiler provides a constructor to every class in case the provider does not offer the same. This is when the programmer provides the constructor with no specific parameters than it is called a default constructor. The code for default constructor can be displayed in the following example.</p>
+<h3 id="Question-Can-we-provide-one-default-constructor-for-our-class"><a href="#Question-Can-we-provide-one-default-constructor-for-our-class" class="headerlink" title="Question: Can we provide one default constructor for our class?"></a>Question: Can we provide one default constructor for our class?</h3><p>Answer: No, we cannot provide one default constructor for our class. When a variable in the class type is set to null, it means that it was never initialized and the outcomes will be zero.</p>
+<h3 id="Question-What-is-the-main-difference-between-the-keyword-struct-and-class"><a href="#Question-What-is-the-main-difference-between-the-keyword-struct-and-class" class="headerlink" title="Question: What is the main difference between the keyword struct and class?"></a>Question: What is the main difference between the keyword struct and class?</h3><p>Answer: The keyword struct is used for resembling public members by default, while the keyword class is used for resembling private members by default.</p>
+<h3 id="Question-Draw-a-comparison-between-C-and-Java"><a href="#Question-Draw-a-comparison-between-C-and-Java" class="headerlink" title="Question: Draw a comparison between C++ and Java"></a>Question: Draw a comparison between C++ and Java</h3><p>Answer:<br>•    C++ has destructors, which are invoked automatically when an object is destroyed. Java has something called automatic garbage collection<br>•    C++ supports multiple inheritance, operator overloading, pointers, structures, templates, and unions. Java doesn’t have any of them<br>•    Java has a Thread class that is inherited in order to create a new thread. C++ has no inbuilt support for threads<br>•    In C++, a goto statement offers a way to jump from a location to some labeled statement in the same function. There is no goto statement in Java<br>•    C++ run and compile using the compiler, which converts the source code into machine level language. Hence, it is platform-dependent. Java compiler, on the other hand, converts the source code into JVM bytecode, which is platform-independent.</p>
+<h3 id="Question-What-differences-separate-structure-from-a-class-in-C"><a href="#Question-What-differences-separate-structure-from-a-class-in-C" class="headerlink" title="Question: What differences separate structure from a class in C++?"></a>Question: What differences separate structure from a class in C++?</h3><p>Answer: There are two important distinctions between a class and a structure in C++. These are:</p>
+<ol>
+<li>   When deriving a structure from a class or some other structure, the default access specifier for the base class or structure is public. On the contrary, default access specifier is private when deriving a class.</li>
+<li>   While the members of a structure are public by default, the members of a class are private by default</li>
+</ol>
+<h3 id="Question-What-does-a-Static-member-in-C-mean"><a href="#Question-What-does-a-Static-member-in-C-mean" class="headerlink" title="Question: What does a Static member in C++ mean?"></a>Question: What does a Static member in C++ mean?</h3><p>Answer: Denoted by the static keyword, a static member is allocated storage, in the static storage area, only once during the program lifetime. Some important facts pertaining to the static members are:<br>•    Any static member function can’t be virtual<br>•    Static member functions don’t have ‘this’ pointer<br>•    The const, const volatile, and volatile declaration aren’t available for static member functions</p>
+<h3 id="Question-Define-the-Reference-variable"><a href="#Question-Define-the-Reference-variable" class="headerlink" title="Question: Define the Reference variable?"></a>Question: Define the Reference variable?</h3><p>Answer: The reference variable in C++ is the name given to the existing variables. The variable name and reference variable point share the same memory location in C++, which helps in updating the original variable using the reference variable. The code can be displayed in the following example.</p>
+<h3 id="Question-Define-the-Copy-Constructor-used-in-C-along-with-its-general-function-prototype-Also-explain-the-various-scenarios-in-which-it-is-called"><a href="#Question-Define-the-Copy-Constructor-used-in-C-along-with-its-general-function-prototype-Also-explain-the-various-scenarios-in-which-it-is-called" class="headerlink" title="Question: Define the Copy Constructor used in C++ along with its general function prototype. Also, explain the various scenarios in which it is called."></a>Question: Define the Copy Constructor used in C++ along with its general function prototype. Also, explain the various scenarios in which it is called.</h3><p>Answer: A member function that initializes an object using another object of the same class is known as a copy constructor in C++. Copy Constructor can also be made private. A call to the Copy Constructor can happen in any of the following 4 scenarios when:</p>
+<ol>
+<li>   The compiler generates a temporary object</li>
+<li>   An object is constructed or based on some another object of the same class</li>
+<li>   An object of the class is returned by value</li>
+<li>   An object of the class is passed (i.e., to a function) by value as an argument<br>The general function prototype for the Copy Constructor is:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ClassName (const ClassName &amp;old_obj);</span><br><span class="line">Point(int x1, int y1) &#123; x&#x3D;x1; y&#x3D;y1;&#125;</span><br><span class="line">Point(const Point &amp;p2) &#123; x&#x3D;p2.x; y&#x3D;p2.y; &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Question-Observe-the-following-code-snippet"><a href="#Question-Observe-the-following-code-snippet" class="headerlink" title="Question: Observe the following code snippet:"></a>Question: Observe the following code snippet:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int i &#x3D; 5;</span><br><span class="line">int j &#x3D; i++;</span><br></pre></td></tr></table></figure>
+<p>After execution, what will be the value of I and j? Explain your answer.<br>Answer: Post the execution of the code above, i and j will be 6 and 5, respectively. For understanding the output, it’s important to understand how the unary ‘++’ operator and the decrement ‘–’ operator works in C++.<br>When any of these operators precede a variable, the value of the variable is first modified, and then this modified value is used. However, when any of the two operators follow a variable, the value is first used, and then it is modified.<br>Therefore, in the code above j is set to the unmodified value of 5, and then i is incremented to store 6.</p>
+<h3 id="Question-Take-a-look-at-the-following-two-code-examples-for-printing-a-vector"><a href="#Question-Take-a-look-at-the-following-two-code-examples-for-printing-a-vector" class="headerlink" title="Question: Take a look at the following two code examples for printing a vector:"></a>Question: Take a look at the following two code examples for printing a vector:</h3><p><img src="https://i.loli.net/2021/02/23/ynfD7kHUZOw9jcS.png" alt="image.png"><br>Is there any advantage of using one over the other?<br>Answer: Though both codes will generate the same output, sample code 2 is a more performant option. This is due to the fact that the post-increment ‘itr++’ operator is more expensive than the pre-increment ‘++itr’ operator.<br>The post-increment operator generates a copy of the element before proceeding with incrementing the element and returning the copy. Moreover, most compilers will automatically optimize sample code 1 by converting it implicitly into sample code 2.</p>
+<h3 id="Question-Define-an-Abstract-class-in-C"><a href="#Question-Define-an-Abstract-class-in-C" class="headerlink" title="Question: Define an Abstract class in C++?"></a>Question: Define an Abstract class in C++?</h3><p><img src="https://i.loli.net/2021/02/23/cMuQmYJerS61ap4.png" alt="image.png"><br>Answer: An abstract class in C++ is referred to as the base class, which has at least one pure virtual function. In such a function, a person cannot instantiate an abstract class. This way, an Abstract class a pure virtual function is defined by using a pure specifier which is equal to zero during the declaration of the virtual member function in the class declaration. The code sample can be displayed as follows in example.</p>
+<h3 id="Question-Suppose-you-have-the-GPA-Grade-Point-Average-of-n-number-of-students-and-you-need-to-store-and-display-it-using-C-Can-you-write-a-program-that-accomplishes-this"><a href="#Question-Suppose-you-have-the-GPA-Grade-Point-Average-of-n-number-of-students-and-you-need-to-store-and-display-it-using-C-Can-you-write-a-program-that-accomplishes-this" class="headerlink" title="Question: Suppose you have the GPA (Grade Point Average) of n number of students, and you need to store and display it using C++. Can you write a program that accomplishes this?"></a>Question: Suppose you have the GPA (Grade Point Average) of n number of students, and you need to store and display it using C++. Can you write a program that accomplishes this?</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int num;</span><br><span class="line">    cout&lt;&lt; &quot;Enter the total number of students: &quot;;</span><br><span class="line">    cin&gt;&gt; num;</span><br><span class="line">    float* ptr;</span><br><span class="line">    ptr &#x3D; new float[num];</span><br><span class="line">    cout&lt;&lt;&quot;Enter the GPA of students&quot; &lt;&lt; endl;</span><br><span class="line">    for(int i &#x3D; 0;i&lt;num;++i)&#123;</span><br><span class="line">       cout&lt;&lt;&quot;Student&quot;&lt;&lt;i+1 &lt;&lt; &quot;:&quot;;</span><br><span class="line">       cin&gt;&gt;*(ptr+i);</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; &quot;\nDisplay GPA of students.&quot; &lt;&lt;endl;</span><br><span class="line">    for(int i &#x3D; 0; i&lt;num; ++i)&#123;</span><br><span class="line">        cout&lt;&lt;&quot;Student&quot; &lt;&lt; i+1 &lt;&lt;&quot;:&quot; &lt;&lt; *(ptr+i) &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    delete[] ptr;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Haoyu Wu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://sslsl.github.io/2021/02/22/C-Interview-Questions/">http://sslsl.github.io/2021/02/22/C-Interview-Questions/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C/">C++</a><a class="post-meta__tags" href="/tags/Interview/">Interview</a></div><div class="post_share"><div class="social-share" data-image="/img/bg/bg4.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/02/16/Data-Network-Research-3-Dimension-Poisson-Point-Process-Connection/"><img class="next-cover" src="/img/bg/bg10.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Data Network Research--3 Dimension Poisson Point Process Connection</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2021/02/10/Socket-Programming/" title="Socket Programming"><img class="cover" src="/img/bg/bg6.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-10</div><div class="title">Socket Programming</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div><div id="comment-switch"><span class="first-comment">Disqus</span><span class="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/photo.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Haoyu Wu</div><div class="author-info__description">A Secret Garden</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">11</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/sslsl"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://gitlab.com/oliviawhy" target="_blank" title="Gitlab"><i class="fab fa-gitlab"></i></a><a class="social-icon" href="mailto:seraphinawu233@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.instagram.com/haoyubb233/" target="_blank" title="Instagram"><i class="fab fa-instagram-square"></i></a><a class="social-icon" href="https://www.linkedin.com/in/haoyu-wu-5b3019192/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog. Come to discover something interesting~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Define-C"><span class="toc-number">1.</span> <span class="toc-text">Question: Define C++?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Can-we-call-C-OOPS-and-Why"><span class="toc-number">2.</span> <span class="toc-text">Question: Can we call C++ OOPS? and Why?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Define-Class-in-C"><span class="toc-number">3.</span> <span class="toc-text">Question: Define Class in C++?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Define-Object-in-C"><span class="toc-number">4.</span> <span class="toc-text">Question: Define Object in C++?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Define-Encapsulation-in-C"><span class="toc-number">5.</span> <span class="toc-text">Question: Define Encapsulation in C++?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Briefly-explain-the-concept-of-Inheritance-in-C"><span class="toc-number">6.</span> <span class="toc-text">Question: Briefly explain the concept of Inheritance in C++.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-What-is-an-abstraction-in-C"><span class="toc-number">7.</span> <span class="toc-text">Question: What is an abstraction in C++?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Define-access-specifier-and-its-various-types-in-C"><span class="toc-number">8.</span> <span class="toc-text">Question: Define access specifier and its various types in C++</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Define-a-namespace"><span class="toc-number">9.</span> <span class="toc-text">Question: Define a namespace?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Define-a-class-template"><span class="toc-number">10.</span> <span class="toc-text">Question: Define a class template?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-What-is-the-function-of-the-keyword-%E2%80%9CVolatile%E2%80%9D"><span class="toc-number">11.</span> <span class="toc-text">Question: What is the function of the keyword “Volatile”?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Define-storage-class-in-C-Name-some"><span class="toc-number">12.</span> <span class="toc-text">Question: Define storage class in C++? Name some?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-What-are-the-most-important-differences-between-C-and-C"><span class="toc-number">13.</span> <span class="toc-text">Question: What are the most important differences between C and C++?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Why-do-we-need-the-Friend-class-and-function"><span class="toc-number">14.</span> <span class="toc-text">Question: Why do we need the Friend class and function?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Explain-the-significance-of-vTable-and-vptr-in-C-and-how-the-compiler-deals-with-them"><span class="toc-number">15.</span> <span class="toc-text">Question: Explain the significance of vTable and vptr in C++ and how the compiler deals with them</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-How-is-function-overloading-different-from-operator-overloading"><span class="toc-number">16.</span> <span class="toc-text">Question: How is function overloading different from operator overloading?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Is-it-possible-for-a-C-program-to-be-compiled-without-the-main-function"><span class="toc-number">17.</span> <span class="toc-text">Question: Is it possible for a C++ program to be compiled without the main() function?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-What-is-a-destructor"><span class="toc-number">18.</span> <span class="toc-text">Question: What is a destructor?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Can-we-overload-a-destructor"><span class="toc-number">19.</span> <span class="toc-text">Question: Can we overload a destructor?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-What-is-the-default-constructor"><span class="toc-number">20.</span> <span class="toc-text">Question: What is the default constructor?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Can-we-provide-one-default-constructor-for-our-class"><span class="toc-number">21.</span> <span class="toc-text">Question: Can we provide one default constructor for our class?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-What-is-the-main-difference-between-the-keyword-struct-and-class"><span class="toc-number">22.</span> <span class="toc-text">Question: What is the main difference between the keyword struct and class?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Draw-a-comparison-between-C-and-Java"><span class="toc-number">23.</span> <span class="toc-text">Question: Draw a comparison between C++ and Java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-What-differences-separate-structure-from-a-class-in-C"><span class="toc-number">24.</span> <span class="toc-text">Question: What differences separate structure from a class in C++?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-What-does-a-Static-member-in-C-mean"><span class="toc-number">25.</span> <span class="toc-text">Question: What does a Static member in C++ mean?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Define-the-Reference-variable"><span class="toc-number">26.</span> <span class="toc-text">Question: Define the Reference variable?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Define-the-Copy-Constructor-used-in-C-along-with-its-general-function-prototype-Also-explain-the-various-scenarios-in-which-it-is-called"><span class="toc-number">27.</span> <span class="toc-text">Question: Define the Copy Constructor used in C++ along with its general function prototype. Also, explain the various scenarios in which it is called.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Observe-the-following-code-snippet"><span class="toc-number">28.</span> <span class="toc-text">Question: Observe the following code snippet:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Take-a-look-at-the-following-two-code-examples-for-printing-a-vector"><span class="toc-number">29.</span> <span class="toc-text">Question: Take a look at the following two code examples for printing a vector:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Define-an-Abstract-class-in-C"><span class="toc-number">30.</span> <span class="toc-text">Question: Define an Abstract class in C++?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Suppose-you-have-the-GPA-Grade-Point-Average-of-n-number-of-students-and-you-need-to-store-and-display-it-using-C-Can-you-write-a-program-that-accomplishes-this"><span class="toc-number">31.</span> <span class="toc-text">Question: Suppose you have the GPA (Grade Point Average) of n number of students, and you need to store and display it using C++. Can you write a program that accomplishes this?</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/02/22/C-Interview-Questions/" title="C++ Interview Questions"><img src="/img/bg/bg4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Interview Questions"/></a><div class="content"><a class="title" href="/2021/02/22/C-Interview-Questions/" title="C++ Interview Questions">C++ Interview Questions</a><time datetime="2021-02-22T17:42:33.000Z" title="Created 2021-02-22 09:42:33">2021-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/02/16/Data-Network-Research-3-Dimension-Poisson-Point-Process-Connection/" title="Data Network Research--3 Dimension Poisson Point Process Connection"><img src="/img/bg/bg10.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Data Network Research--3 Dimension Poisson Point Process Connection"/></a><div class="content"><a class="title" href="/2021/02/16/Data-Network-Research-3-Dimension-Poisson-Point-Process-Connection/" title="Data Network Research--3 Dimension Poisson Point Process Connection">Data Network Research--3 Dimension Poisson Point Process Connection</a><time datetime="2021-02-16T21:18:10.000Z" title="Created 2021-02-16 13:18:10">2021-02-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/02/10/Socket-Programming/" title="Socket Programming"><img src="/img/bg/bg6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Socket Programming"/></a><div class="content"><a class="title" href="/2021/02/10/Socket-Programming/" title="Socket Programming">Socket Programming</a><time datetime="2021-02-10T21:58:04.000Z" title="Created 2021-02-10 13:58:04">2021-02-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/02/10/Bitwise-Operators/" title="Bitwise Operators"><img src="/img/bg/bg7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Bitwise Operators"/></a><div class="content"><a class="title" href="/2021/02/10/Bitwise-Operators/" title="Bitwise Operators">Bitwise Operators</a><time datetime="2021-02-10T16:18:22.000Z" title="Created 2021-02-10 08:18:22">2021-02-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/02/02/Python-Django-Shopping-Website/" title="Python-Django Shopping Website"><img src="/img/bg/bg1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python-Django Shopping Website"/></a><div class="content"><a class="title" href="/2021/02/02/Python-Django-Shopping-Website/" title="Python-Django Shopping Website">Python-Django Shopping Website</a><time datetime="2021-02-02T21:23:24.000Z" title="Created 2021-02-02 13:23:24">2021-02-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Haoyu Wu</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://sslsl.github.io/2021/02/22/C-Interview-Questions/'
+    this.page.identifier = '2021/02/22/C-Interview-Questions/'
+    this.page.title = 'C++ Interview Questions'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sslsl-github-io.disqus.com/embed.js';
+
+      //s.src = 'https://sslsl-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Disqus' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'brwybltITbYMbzshh6ugFhfb-gzGzoHsz',
+      appKey: 'lM8dFGuhc9XojNyPYk9I0441',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign(initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Disqus' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div class="aplayer no-destroy" data-id="2539099971" data-server="netease" data-type="playlist" data-fixed="true" data-listmaxheight="340px" data-mini="true" data-listFolded="true" data-order="random" data-preload="auto" data-lrctype=0 data-autoplay="false" data-mutex="true" muted></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})</script></div></body></html>
